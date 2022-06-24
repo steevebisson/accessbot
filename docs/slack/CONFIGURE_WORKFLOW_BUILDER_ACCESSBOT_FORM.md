@@ -7,24 +7,42 @@ parent: Slack
 
 # Configure AccessBot Form
 
-In case you already have an Access Form built from Workflow Builder, you can follow the next steps in order to enable it.
+If your organization has access to Workflow Builder, you can create an Access Form using that tool (see steps below). If you don't have access to it, you can follow [this tutorial](./CONFIGURE_ACCESS_FORM_BOT.md) teaching you how to set up an AccessForm Bot for free using a more complex method.
+
+## Create the access form with Workflow Builder
+
+First, we need to create the access form via Workflow Builder. To open it, click on the plus sign in the bottom left corner of the Slack chat and search for "Workflow Builder".
+
+![image](https://user-images.githubusercontent.com/20745533/175536751-fd2b5dff-2126-413d-babb-7e6eed1cf03d.png)
+
+![image](https://user-images.githubusercontent.com/20745533/175536931-a9e7cb40-d04b-4989-a5ac-cabc6b159b12.png)
+
+Now, configure your form as follows:
+
+![image](https://user-images.githubusercontent.com/20745533/175537044-69e17cca-539c-4ae7-be89-171d5b03b707.png)
+
+After that you'll have a working form, but we still need to configure the AccessBot to recognize it.
 
 ## Set Environment Variable
 
-To request access to a StrongDM resource through AccessBot using a form set the environment variable `SDM_ACCESS_FORM_BOT_NICKNAME` in your `env-file`.
+Now we need to define the environment variable `SDM_ACCESS_FORM_BOT_NICKNAME` with the nickname of the Workflow Builder bot.
 
-To know the value you should put in the environment variable, run the following command in the terminal (in the project root):
-
-```bash
-$ python3 tools/get-slack-handle.py -d "AccessBot Form" 
-```
-After running this command, you should be able to see something like this in the terminal:
+To find out their nickname, run the following command in the terminal (in the project root):
 
 ```
-The nick for that user is: @wb_bot_a03muafcvm1
+python3 tools/get-slack-handle.py -d "AccessBot Form" 
+```
+After running this command, you should see something like this in the terminal:
+
+```
+The nick for that user is: @wb_bot_xxxxxxxxxxx
 ```
 
-After that, use this nickname to set the environment variable mentioned above.
+After that, set this nickname as the value of the environment variable mentioned above.
+
+```
+SDM_ACCESS_FORM_BOT_NICKNAME=@wb_bot_xxxxxxxxxxx
+```
 
 ## Usage Example
 

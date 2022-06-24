@@ -6,7 +6,7 @@ parent: Slack
 ---
 # AccessForm
 
-AccessForm is the free way to request access to a resource using a form within Slack.
+AccessForm is the free way to request access to a resource using a form within Slack, but it requires a more complex infrastructure. We strongly recommend you to use the [Workflow Builder method](./CONFIGURE_WORKFLOW_BUILDER_ACCESSBOT_FORM.md).
 
 ## Create AccessForm
 
@@ -88,8 +88,3 @@ Then, under the `request_url` field replace "https://your-subdomain.loca.lt" wit
 The following GIF shows an example of using the resource access form within Slack.
 
 ![accessform-2](https://user-images.githubusercontent.com/49795183/163470488-ec502e31-6b54-4f0b-93f4-9c42acdbec46.gif)
-
-
-## Access Form with Workflow Builder
-
-In case you want to use Workflow Builder to build the form, please refer to [CONFIGURE_WORKFLOW_BUILDER_ACCESSBOT_FORM.md](docs/slack/CONFIGURE_WORKFLOW_BUILDER_ACCESSBOT_FORM.md).
